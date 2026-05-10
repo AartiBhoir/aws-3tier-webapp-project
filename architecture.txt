@@ -1,0 +1,35 @@
+AWS 3-Tier Web Application Architecture
+
+1. USER LAYER (Client)
+- User accesses the application using browser (Chrome / Mobile)
+- Request is sent over internet (HTTP/HTTPS)
+
+2. WEB TIER (EC2 Instance)
+- Amazon EC2 hosts the web server (Apache/Nginx)
+- Handles user requests
+- Forwards database requests to backend
+
+3. DATABASE TIER (RDS MySQL)
+- Amazon RDS stores application data
+- EC2 connects to RDS using endpoint
+- Performs SQL operations like SELECT, INSERT, UPDATE
+
+FLOW OF REQUEST:
+
+User → Internet → EC2 Web Server → RDS Database → Response back to User
+
+AWS SERVICES USED:
+
+- Amazon EC2 (Web Server)
+- Amazon RDS (Database)
+- VPC (Networking)
+- Security Groups (Access control)
+
+SECURITY:
+
+- EC2 allows HTTP/HTTPS traffic
+- RDS only accessible from EC2 security group
+
+RESULT:
+
+A scalable 3-tier architecture where frontend, backend, and database are separated for better performance and security.
